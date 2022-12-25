@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import '../styles/App.css' 
+import Layout from './Layout'
+import Home from './pages/Home';
 
-function App() {
-  const [count, setCount] = useState(0)
+function App() { 
 
   return (
     <div className="App">
        
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Layout>
+    <Home></Home>
+      </Layout>
     </div>
   )
 }
