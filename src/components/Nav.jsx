@@ -1,8 +1,10 @@
  
-import React from 'react'
-import Account from './Account'
-import classes from '../styles/Nav.module.css'
+ 
 import logo from '../assets/images/logo-bg.png'
+import classes from '../styles/Nav.module.css'
+import Account from './Account'
+
+
 export default function Nav() {
   return (
     <nav className={classes.nav}>
