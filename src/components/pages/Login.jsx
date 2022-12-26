@@ -1,6 +1,6 @@
 
 import classes from "../../styles/Login.module.css"
-import LoginIllustration from '../LoginIllustration'
+import LoginIllustration from '../../assets/images/login.svg'
 import Button from '../Button'
 import Form from '../Form'
 import TextInput from '../TextInput' 
@@ -18,7 +18,7 @@ export default function Signup() {
             <TextInput type="email" placeholder="Enter Email" icon="alternate_email"/> 
             <TextInput type="password" placeholder="Enter Password" icon="lock"/>  
              
-            <Button>Submit Now</Button>
+            <Button><span>Submit Now</span></Button>
 
  
             <div className="info">
