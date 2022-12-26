@@ -1,10 +1,10 @@
- 
+
 import classes from "../../styles/Signup.module.css"
-import Button from '../Button'
-import Checkbox from '../Checkbox'
-import Form from '../Form'
 import Illustration from '../Illustration'
+import Button from '../Button'
+import Form from '../Form'
 import TextInput from '../TextInput'
+import Checkbox from '../Checkbox'
 
 
 export default function Signup() {
