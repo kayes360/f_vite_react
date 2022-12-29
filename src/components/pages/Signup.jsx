@@ -5,6 +5,8 @@ import Checkbox from '../Checkbox'
 import Form from '../Form'
 import Illustration from '../Illustration'
 import TextInput from '../TextInput'
+import {Link} from 'react-router-dom'
+
 
 
 export default function Signup() {
@@ -28,7 +30,7 @@ export default function Signup() {
 
  
             <div className="info">
-              Already have an account? <a href="login.html">Login</a> instead.
+              Already have an account? <Link to="/login">Login</Link> instead.
             </div>
 
            </Form>

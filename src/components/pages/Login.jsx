@@ -1,9 +1,10 @@
 
 import classes from "../../styles/Login.module.css"
-import LoginIllustration from '../../assets/images/login.svg'
+import LoginIllustration from '../Illustration'
 import Button from '../Button'
 import Form from '../Form'
 import TextInput from '../TextInput' 
+import {Link} from 'react-router-dom'
 
 
 export default function Signup() {
@@ -22,7 +23,7 @@ export default function Signup() {
 
  
             <div className="info">
-              Already have an account? <a href="login.html">Login</a> instead.
+              Don't Have account? <Link to="/signup">Signup</Link> First.
             </div>
 
            </Form>
