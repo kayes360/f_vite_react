@@ -1,40 +1,16 @@
  
-import classes from "../../styles/Signup.module.css"
-import Button from '../Button'
-import Checkbox from '../Checkbox'
-import Form from '../Form'
+
+
 import Illustration from '../Illustration'
-import TextInput from '../TextInput'
-import {Link} from 'react-router-dom'
-
-
-
+import SignUpForm from "../SignUpForm"
 export default function Signup() {
   return (
     <>
         <h1>Create an account</h1>
         
         <div className="column">
-            <Illustration />
-
-           <Form classes={`${classes.signup}`}>
-            <TextInput type="text" placeholder="Enter Name" icon="person"/>
-            <TextInput type="email" placeholder="Enter Email" icon="alternate_email"/> 
-            <TextInput type="password" placeholder="Enter Password" icon="lock"/> 
-            <TextInput type="password" placeholder="Enter Confirm Password" icon="lock_clock"/> 
-            <Checkbox  text="I agree to the Terms &amp; Conditions" icon="lock_clock"/>
-             
-            <Button>
-              <span>Submit Now</span>
-            </Button>
-
- 
-            <div className="info">
-              Already have an account? <Link to="/login">Login</Link> instead.
-            </div>
-
-           </Form>
-
+            <Illustration /> 
+            <SignUpForm /> 
         </div>
     </>
   )
