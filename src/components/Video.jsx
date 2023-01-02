@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Video() {
   return (
-    <div>
-      <a href="quiz.html">
+    <div> 
         <div className={classes.video}>
           <img src={image} alt="" />
           <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
@@ -13,8 +12,7 @@ export default function Video() {
             <p>10 Questions</p>
             <p>Score : Not taken yet</p>
           </div>
-        </div>
-      </a>
+        </div> 
     </div>
   );
 }
