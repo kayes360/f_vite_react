@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../firebase";
 
 import {
-  getAuth,
   createUserWithEmailAndPassword,
-  updateProfile,
+  getAuth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
+  updateProfile,
 } from "firebase/auth";
+import "../firebase";
 
 const AuthContext = React.createContext();
 
@@ -16,6 +16,7 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 export function AuthProvider({ children }) {
+  
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
 

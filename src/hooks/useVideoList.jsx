@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
 import {
   get,
-  query,
   getDatabase,
+  limitToFirst,
   orderByKey,
+  query,
   ref,
   startAt,
-  limitToFirst,
 } from "firebase/database";
+import { useEffect, useState } from "react";
 
 export default function useVideoList(page) {
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -18,7 +17,7 @@ export default function useVideoList(page) {
 
   useEffect(() => {
     async function fetchVideos() {
-      //database related works
+      // database related works
       const db = getDatabase();
       const videosRef = ref(db, "videos");
       const videoQuery = query(
@@ -31,25 +30,30 @@ export default function useVideoList(page) {
       try {
         setError(false);
         setLoading(true);
-        //request firebase database
-        const snapshots = await get(videoQuery);
+        // request firebase database
+        const snapshot = await get(videoQuery);
         setLoading(false);
-
-        if (snapshots.exists()) {
-          console.log(snapshots);
+        if (snapshot.exists()) {
           setVideos((prevVideos) => {
-            return [...prevVideos, ...Object.values(snapshots.val())];
+            return [...prevVideos, ...Object.values(snapshot.val())];
           });
         } else {
-          hasMore(false)
+          setHasMore(false);
         }
       } catch (err) {
         console.log(err);
-        setError(true);
         setLoading(false);
+        setError(true);
       }
     }
+
     fetchVideos();
   }, [page]);
-  return { loading, error, videos, hasMore };
+
+  return {
+    loading,
+    error,
+    videos,
+    hasMore,
+  };
 }
