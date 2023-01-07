@@ -37,7 +37,7 @@ export default function Quiz() {
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
-  const  navigate  = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -70,13 +70,18 @@ export default function Quiz() {
   async function submit() {
     const { uid } = currentUser;
     const db = getDatabase();
-    const resultRef = ref(db, `result/${uid}`); 
+    const resultRef = ref(db, `result/${uid}`);
     // const navigate = useNavigate();
 
     await set(resultRef, {
       [id]: qna,
     });
-    navigate( `/result${id}`);
+     
+    navigate(`/result/${id}`, 
+          { state: {
+            qna 
+          },
+          });
   }
   // calculate percentage of progress
   const percentage =
