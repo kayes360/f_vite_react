@@ -76,12 +76,11 @@ export default function Quiz() {
     await set(resultRef, {
       [id]: qna,
     });
-     
-    navigate(`/result/${id}`, 
-          { state: {
-            qna 
-          },
-          });
+
+    navigate(
+      `/result/${id}`, 
+      { state: {qna, },
+    });
   }
   // calculate percentage of progress
   const percentage =
@@ -97,6 +96,7 @@ export default function Quiz() {
           <h4>Question can have multiple answers</h4>
 
           <Answers
+            input
             options={qna[currentQuestion].options}
             handleChange={handleAnswerChange}
           />
@@ -112,3 +112,5 @@ export default function Quiz() {
     </>
   );
 }
+
+
