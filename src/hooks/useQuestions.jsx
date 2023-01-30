@@ -25,11 +25,11 @@ export default function useQuestions(videoID) {
         setError(false);
         setLoading(true);
         //request firebase database
-        const snapshots = await get(quizQuery);
+        const snapshots = await get(quizQuery); 
         setLoading(false);
 
         if (snapshots.exists()) {
-          console.log(snapshots);
+          // console.log(snapshots);
           setQuestions((prevQuestions) => {
             return [...prevQuestions, ...Object.values(snapshots.val())];
           });

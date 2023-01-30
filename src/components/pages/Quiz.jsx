@@ -29,8 +29,10 @@ const reducer = (state, action) => {
       return state;
   }
 };
-
+let renderCount = 0;
 export default function Quiz() {
+  renderCount++;
+  console.log( `"quiz Container Rendered " ${renderCount} "quiz Container Rendered "`);
   const { id } = useParams();
   const { loading, error, questions } = useQuestions(id);
   const [currentQuestion, setCurrentQuestion] = useState(0);

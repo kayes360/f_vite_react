@@ -29,7 +29,7 @@ export default function useAnswers(videoID) {
         setLoading(false);
 
         if (snapshots.exists()) {
-          console.log(snapshots);
+          // console.log(snapshots);
           setAnswers((prevAnswers) => {
             return [...prevAnswers, ...Object.values(snapshots.val())];
           });

@@ -18,26 +18,10 @@ export default function MiniPlayer({ id, title }) {
     }
   }
   return (
-    <div
-      className={`${classes.miniPlayer} ${classes.floatingBtn}`}
-      ref={buttonRef}
-      onClick={toggleMiniPlayer}
-    >
-      <span className={`material-icons-outlined ${classes.open}`}>
-        {" "}
-        play_circle_filled{" "}
-      </span>
-      <span
-        className={`material-icons-outlined ${classes.close}`}
-        onClick={toggleMiniPlayer}
-      >
-        {" "}
-        close{" "}
-      </span>  
-      <ReactPlayer 
-      className={classes.player}
-        url={videoURL} 
-      />
+    <div className={`${classes.miniPlayer} ${classes.floatingBtn}`}  ref={buttonRef}  onClick={toggleMiniPlayer}>
+      <span className={`material-icons-outlined ${classes.open}`}>{""} play_circle_filled{""}</span>
+      <span className={`material-icons-outlined ${classes.close}`} onClick={toggleMiniPlayer}>{" "}close{" "}</span>  
+      <ReactPlayer className={classes.player} url={videoURL} width="300px" height="168px" playing={status} controls/>
       <p>{title}</p>
     </div>
   );

@@ -1,8 +1,10 @@
 import { Fragment } from "react";
 import classes from "../styles/Answers.module.css";
 import Checkbox from "./Checkbox";
-
+let renderCount = 0; 
 export default function Answers({ options = [], handleChange, input }) {
+  renderCount++;
+  // console.log( `"answer Container Rendered " ${renderCount} "times "`);
   return (
     <div className={classes.answers}>
       {options.map((option, index) => (
